@@ -1,12 +1,11 @@
 from fastapi import FastAPI
-from fastapi.responses import FileResponse
 import uvicorn
 
 app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return FileResponse("index.html")
+    return {"message": "Hello World-2"}
 
 
 @app.get("/items/{item_id}")
